@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 void main() {
   return runApp(
     MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.red,
         appBar: AppBar(
@@ -18,6 +19,27 @@ void main() {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+            child: TextButton(
+              onPressed: () {
+                print('Left Button Tapped');
+              },
+              child: Image.asset('images/dice1.png'),
+            ),
+          ),
+          Expanded(
+            child: TextButton(
+              onPressed: () {
+                print('Right Button Tapped');
+              },
+              child: Image.asset('images/dice2.png'),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
