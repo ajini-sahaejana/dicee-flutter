@@ -8,7 +8,7 @@ void main() {
       home: Scaffold(
         backgroundColor: Colors.red,
         appBar: AppBar(
-          title: Text('Dicee'),
+          title: Center(child: Text('Dicee')),
           backgroundColor: Colors.red,
         ),
         body: DicePage(),
@@ -35,8 +35,10 @@ class _DicePageState extends State<DicePage> {
               onPressed: () {
                 setState(() {
                   leftDiceNo = Random().nextInt(6) + 1;
+                  rightDiceNo = Random().nextInt(6) + 1;
                   print('Left Button Tapped');
-                  print('diceNumber = $leftDiceNo');
+                  print('LeftDiceNumber = $leftDiceNo');
+                  print('RightDiceNumber = $rightDiceNo');
                 });
               },
               child: Image.asset('images/dice$leftDiceNo.png'),
@@ -47,8 +49,10 @@ class _DicePageState extends State<DicePage> {
               onPressed: () {
                 setState(() {
                   rightDiceNo = Random().nextInt(6) + 1;
+                  leftDiceNo = Random().nextInt(6) + 1;
                   print('Right Button Tapped');
-                  print('diceNumber = $rightDiceNo');
+                  print('LeftDiceNumber = $leftDiceNo');
+                  print('RightDiceNumber = $rightDiceNo');
                 });
               },
               child: Image.asset('images/dice$rightDiceNo.png'),
